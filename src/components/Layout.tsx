@@ -1,6 +1,7 @@
 
 import React, { useEffect, useState } from "react";
 import MusicPlayer from "./MusicPlayer";
+import VideoInvite from "./VideoInvite";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -38,6 +39,9 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
       {/* Fixed music player */}
       <MusicPlayer />
+      
+      {/* Video invitation bubble */}
+      <VideoInvite />
 
       {/* Footer with credits */}
       <footer className="w-full text-center py-4 text-xs text-gray-500 mt-20">
