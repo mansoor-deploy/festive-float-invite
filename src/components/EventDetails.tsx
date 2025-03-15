@@ -109,25 +109,6 @@ const EventDetails: React.FC<EventDetailsProps> = ({
             </motion.div>
           ))}
         </motion.div>
-
-        <motion.div
-          className="mt-12 glass-card text-center"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-        >
-          <h3 className="text-xl font-semibold mb-2">Venue</h3>
-          <p className="text-gray-700 mb-4">{venue}</p>
-          <div className="mt-4">
-            <a
-              href="#venue"
-              className="inline-block px-6 py-2 rounded-full text-sm font-medium bg-festival-blue/10 text-festival-blue hover:bg-festival-blue/20 transition-colors"
-            >
-              View Map
-            </a>
-          </div>
-        </motion.div>
       </div>
     </div>
   );

@@ -7,6 +7,7 @@ import EventDetails from "@/components/EventDetails";
 import VenueMap from "@/components/VenueMap";
 import RSVP from "@/components/RSVP";
 import Gallery from "@/components/Gallery";
+import PlaylistMenu from "@/components/PlaylistMenu";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Index = () => {
@@ -58,6 +59,8 @@ const Index = () => {
           />
           
           <Gallery />
+          
+          <PlaylistMenu />
           
           <RSVP />
         </Layout>

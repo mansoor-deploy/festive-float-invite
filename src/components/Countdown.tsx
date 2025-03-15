@@ -1,15 +1,18 @@
 
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Calendar, Plus } from "lucide-react";
+import { Calendar, AlarmClock, Plus } from "lucide-react";
 
 interface CountdownProps {
   targetDate: string;
 }
 
 const Countdown: React.FC<CountdownProps> = ({ targetDate }) => {
+  // Override targetDate to March 31, 2025
+  const fixedTargetDate = "March 31, 2025";
+  
   const calculateTimeLeft = () => {
-    const difference = +new Date(targetDate) - +new Date();
+    const difference = +new Date(fixedTargetDate) - +new Date();
     let timeLeft = {};
 
     if (difference > 0) {
@@ -36,7 +39,7 @@ const Countdown: React.FC<CountdownProps> = ({ targetDate }) => {
 
   const addToGoogleCalendar = () => {
     // Format date for Google Calendar URL
-    const eventDate = new Date(targetDate);
+    const eventDate = new Date(fixedTargetDate);
     const startDate = eventDate.toISOString().replace(/-|:|\.\d+/g, '');
     
     // End date (4 hours after start)
@@ -103,7 +106,8 @@ const Countdown: React.FC<CountdownProps> = ({ targetDate }) => {
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-10">
           <span className="inline-block py-1 px-4 rounded-full glass-effect text-sm font-medium mb-4">
-            Mark Your Calendar
+            <AlarmClock className="w-4 h-4 inline-block mr-1" />
+            Countdown to March 31, 2025
           </span>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">The Countdown Is On</h2>
           <p className="text-gray-600 max-w-lg mx-auto">
