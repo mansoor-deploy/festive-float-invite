@@ -73,7 +73,7 @@ const Countdown: React.FC<CountdownProps> = ({ targetDate }) => {
 
     timerComponents.push(
       <div key={interval} className="flex flex-col items-center">
-        <div className="w-20 h-20 md:w-24 md:h-24 glass-effect rounded-2xl flex items-center justify-center mb-2 text-3xl md:text-4xl font-bold text-gradient-primary">
+        <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 glass-effect rounded-xl sm:rounded-2xl flex items-center justify-center mb-2 text-xl sm:text-2xl md:text-4xl font-bold text-gradient-primary">
           {(timeLeft as TimeLeft)[interval as keyof TimeLeft]}
         </div>
         <span className="text-xs uppercase tracking-wider text-gray-600 font-medium">
@@ -96,7 +96,7 @@ const Countdown: React.FC<CountdownProps> = ({ targetDate }) => {
 
   return (
     <motion.div
-      className="py-16 px-6"
+      className="py-10 px-4 sm:px-6"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: "-100px" }}
@@ -104,37 +104,37 @@ const Countdown: React.FC<CountdownProps> = ({ targetDate }) => {
       id="countdown"
     >
       <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-10">
-          <span className="inline-block py-1 px-4 rounded-full glass-effect text-sm font-medium mb-4">
-            <AlarmClock className="w-4 h-4 inline-block mr-1" />
+        <div className="text-center mb-6 sm:mb-8">
+          <span className="inline-block py-1 px-3 sm:px-4 rounded-full glass-effect text-xs sm:text-sm font-medium mb-3 sm:mb-4">
+            <AlarmClock className="w-3 h-3 sm:w-4 sm:h-4 inline-block mr-1" />
             Countdown to March 31, 2025
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">The Countdown Is On</h2>
-          <p className="text-gray-600 max-w-lg mx-auto">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">The Countdown Is On</h2>
+          <p className="text-sm sm:text-base text-gray-600 max-w-lg mx-auto">
             Join us for an unforgettable celebration. Time is ticking, we can't wait to see you!
           </p>
         </div>
 
-        <div className="glass-effect rounded-3xl p-8 md:p-10">
+        <div className="glass-effect rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10">
           {timerComponents.length ? (
-            <div className="flex flex-col gap-8">
-              <div className="flex justify-center gap-4 md:gap-10">
+            <div className="flex flex-col gap-6">
+              <div className="flex justify-center gap-3 sm:gap-4 md:gap-8 lg:gap-10">
                 {timerComponents}
               </div>
               
               <div className="flex justify-center">
                 <button 
                   onClick={addToGoogleCalendar}
-                  className="flex items-center gap-2 px-6 py-3 rounded-full glass-effect hover:bg-white/50 transition-all active:scale-95 text-sm md:text-base"
+                  className="flex items-center gap-1 sm:gap-2 px-4 sm:px-6 py-2 sm:py-3 rounded-full glass-effect hover:bg-white/50 transition-all active:scale-95 text-xs sm:text-sm md:text-base"
                 >
-                  <Calendar className="w-5 h-5 text-festival-green" />
+                  <Calendar className="w-4 h-4 sm:w-5 sm:h-5 text-festival-green" />
                   <span>Add to Google Calendar</span>
-                  <Plus className="w-4 h-4" />
+                  <Plus className="w-3 h-3 sm:w-4 sm:h-4" />
                 </button>
               </div>
             </div>
           ) : (
-            <div className="text-3xl text-center font-bold text-gradient-primary py-6">
+            <div className="text-xl sm:text-2xl md:text-3xl text-center font-bold text-gradient-primary py-4 sm:py-6">
               The celebration has begun!
             </div>
           )}

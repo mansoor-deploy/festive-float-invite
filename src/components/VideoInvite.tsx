@@ -1,7 +1,8 @@
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useContext } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Video, X } from "lucide-react";
+import { AudioPlayerContext } from "./MusicPlayer";
 
 const VideoInvite: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -10,6 +11,7 @@ const VideoInvite: React.FC = () => {
   const observerRef = useRef<IntersectionObserver | null>(null);
   const targetRef = useRef<HTMLDivElement | null>(null);
   const videoRef = useRef<HTMLIFrameElement | null>(null);
+  const { pauseAudio, resumeAudio } = useContext(AudioPlayerContext);
 
   // Show bubble when user reaches bottom of page
   useEffect(() => {
@@ -43,12 +45,14 @@ const VideoInvite: React.FC = () => {
   }, []);
 
   const openVideo = () => {
+    pauseAudio(); // Pause the background music
     setIsVideoOpen(true);
     setHasWatched(true);
   };
 
   const closeVideo = () => {
     setIsVideoOpen(false);
+    resumeAudio(); // Resume the background music
     
     // Stop video when closing
     if (videoRef.current && videoRef.current.src) {

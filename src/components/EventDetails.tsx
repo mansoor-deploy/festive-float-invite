@@ -70,26 +70,26 @@ const EventDetails: React.FC<EventDetailsProps> = ({
   };
 
   return (
-    <div id="details" className="py-24 px-6 scroll-section">
+    <div id="details" className="py-10 sm:py-16 px-4 sm:px-6 scroll-section">
       <div className="max-w-4xl mx-auto">
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-8 sm:mb-12"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
         >
-          <span className="inline-block py-1 px-4 rounded-full glass-effect text-sm font-medium mb-4">
+          <span className="inline-block py-1 px-4 rounded-full glass-effect text-sm font-medium mb-3 sm:mb-4">
             Everything You Need To Know
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Event Details</h2>
-          <p className="text-gray-600 max-w-lg mx-auto">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">Event Details</h2>
+          <p className="text-sm sm:text-base text-gray-600 max-w-lg mx-auto">
             We've planned an amazing day to celebrate this special occasion. Here's what you need to know.
           </p>
         </motion.div>
 
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-3 gap-6"
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -105,7 +105,7 @@ const EventDetails: React.FC<EventDetailsProps> = ({
                 {detail.icon}
               </div>
               <h3 className="text-lg font-semibold mb-1">{detail.title}</h3>
-              <p className="text-gray-700">{detail.content}</p>
+              <p className="text-sm sm:text-base text-gray-700">{detail.content}</p>
             </motion.div>
           ))}
         </motion.div>
