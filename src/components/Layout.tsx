@@ -33,7 +33,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       <div className="absolute inset-0 bg-gradient-radial from-transparent to-white/30 pointer-events-none"></div>
 
       {/* Main content container with fade-in animation */}
-      <div className={`relative z-10 transition-opacity duration-1000 ease-out ${isLoaded ? 'opacity-100' : 'opacity-0'} space-y-4 sm:space-y-6 md:space-y-8`}>
+      <div className={`relative z-10 transition-opacity duration-1000 ease-out ${isLoaded ? 'opacity-100' : 'opacity-0'} space-y-2 sm:space-y-3 md:space-y-4`}>
         {children}
       </div>
 
@@ -44,7 +44,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       <VideoInvite />
 
       {/* Footer with credits */}
-      <footer className="w-full text-center py-4 text-xs text-gray-500 mt-12">
+      <footer className="w-full text-center py-3 text-xs text-gray-500 mt-6">
         <p>Made with ♥ for a special day</p>
       </footer>
     </div>

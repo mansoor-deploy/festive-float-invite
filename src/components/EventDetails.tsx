@@ -70,26 +70,26 @@ const EventDetails: React.FC<EventDetailsProps> = ({
   };
 
   return (
-    <div id="details" className="py-10 sm:py-16 px-4 sm:px-6 scroll-section">
+    <div id="details" className="py-6 sm:py-10 px-4 sm:px-6 scroll-section">
       <div className="max-w-4xl mx-auto">
         <motion.div
-          className="text-center mb-8 sm:mb-12"
+          className="text-center mb-5 sm:mb-8"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
         >
-          <span className="inline-block py-1 px-4 rounded-full glass-effect text-sm font-medium mb-3 sm:mb-4">
+          <span className="inline-block py-1 px-4 rounded-full glass-effect text-sm font-medium mb-2 sm:mb-3">
             Everything You Need To Know
           </span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">Event Details</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-3">Event Details</h2>
           <p className="text-sm sm:text-base text-gray-600 max-w-lg mx-auto">
             We've planned an amazing day to celebrate this special occasion. Here's what you need to know.
           </p>
         </motion.div>
 
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6"
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -101,7 +101,7 @@ const EventDetails: React.FC<EventDetailsProps> = ({
               className="glass-card flex flex-col items-center text-center"
               variants={itemVariants}
             >
-              <div className="w-12 h-12 rounded-full glass-effect flex items-center justify-center mb-4">
+              <div className="w-12 h-12 rounded-full glass-effect flex items-center justify-center mb-3">
                 {detail.icon}
               </div>
               <h3 className="text-lg font-semibold mb-1">{detail.title}</h3>

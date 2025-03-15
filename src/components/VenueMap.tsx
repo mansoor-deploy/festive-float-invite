@@ -10,19 +10,19 @@ interface VenueMapProps {
 
 const VenueMap: React.FC<VenueMapProps> = ({ address, mapUrl }) => {
   return (
-    <div id="venue" className="py-20 px-6 scroll-section">
+    <div id="venue" className="py-8 sm:py-12 px-6 scroll-section">
       <div className="max-w-5xl mx-auto">
         <motion.div
-          className="text-center mb-12"
+          className="text-center mb-6 sm:mb-8"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
         >
-          <span className="inline-block py-1 px-4 rounded-full glass-effect text-sm font-medium mb-4">
+          <span className="inline-block py-1 px-4 rounded-full glass-effect text-sm font-medium mb-3">
             Location
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Venue Details</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-3">Venue Details</h2>
           <p className="text-gray-600 max-w-lg mx-auto flex items-center justify-center gap-1">
             <MapPin className="h-4 w-4" />
             {address}
@@ -45,14 +45,14 @@ const VenueMap: React.FC<VenueMapProps> = ({ address, mapUrl }) => {
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center p-8 glass-effect rounded-3xl max-w-md">
+                <div className="text-center p-6 sm:p-8 glass-effect rounded-3xl max-w-md">
                   <h3 className="text-xl font-semibold mb-2">Interactive Map</h3>
-                  <p className="text-gray-700 mb-4">For an interactive map and directions, click below.</p>
+                  <p className="text-gray-700 mb-3">For an interactive map and directions, click below.</p>
                   <a
                     href={mapUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center px-6 py-3 rounded-full font-medium glass-button button-gradient text-white hover:shadow-lg transition-all active:scale-95"
+                    className="inline-flex items-center px-5 py-2 sm:px-6 sm:py-3 rounded-full font-medium glass-button button-gradient text-white hover:shadow-lg transition-all active:scale-95"
                   >
                     <Navigation className="w-4 h-4 mr-2" />
                     Get Directions
@@ -64,7 +64,7 @@ const VenueMap: React.FC<VenueMapProps> = ({ address, mapUrl }) => {
         </motion.div>
 
         <motion.div
-          className="mt-10 text-center"
+          className="mt-6 text-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}

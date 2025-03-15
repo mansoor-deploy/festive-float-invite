@@ -38,26 +38,26 @@ const Gallery: React.FC = () => {
   };
 
   return (
-    <div className="py-20 px-6">
+    <div className="py-8 sm:py-12 px-6">
       <div className="max-w-6xl mx-auto">
         <motion.div
-          className="text-center mb-12"
+          className="text-center mb-6 sm:mb-8"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
         >
-          <span className="inline-block py-1 px-4 rounded-full glass-effect text-sm font-medium mb-4">
+          <span className="inline-block py-1 px-4 rounded-full glass-effect text-sm font-medium mb-3">
             Memories
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Photo Gallery</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-3">Photo Gallery</h2>
           <p className="text-gray-600 max-w-lg mx-auto">
             A glimpse of the moments we've shared. More memories coming soon!
           </p>
         </motion.div>
 
         <motion.div
-          className="grid grid-cols-2 md:grid-cols-3 gap-4"
+          className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -84,7 +84,7 @@ const Gallery: React.FC = () => {
         </motion.div>
 
         <motion.div
-          className="text-center mt-10"
+          className="text-center mt-6"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
